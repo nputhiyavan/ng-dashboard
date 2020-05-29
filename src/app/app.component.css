@@ -1,0 +1,105 @@
+/* .header {
+  grid-column: 1;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-gap: 1em;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main {
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 1em;
+}
+
+.header {
+  display: grid;
+  grid-column: 1;
+  background: #111;
+}
+
+.body {
+  display: grid;
+  grid-column: 1;
+  background: orange;
+  padding: 1em 1em;
+}
+
+ */
+
+ .grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Side nav is hidden on mobile */
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  height: 100vh;
+}
+
+.sidenav {
+  display: none;
+  grid-area: sidenav;
+  background-color: #394263;
+}
+
+ @media only screen and (min-width: 46.875em) {
+ .grid-container {
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+  padding-right: 0px;
+  /* width: 100vw; */
+
+}
+.sidenav {
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: grid;
+  grid-area: sidenav;
+  overflow: auto;
+  background-color: #394263;
+  transition: all 1s;
+}
+body:hover .sidenav{
+  width: 0%;
+}
+ }
+/* Give every child element its grid name */
+.header {
+  grid-area: header;
+  background-color: #648ca6;
+}
+
+
+.main {
+  grid-area: main;
+  background-color: #8fd4d9;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #648ca6;
+}
+/* .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: #648ca6;
+}
